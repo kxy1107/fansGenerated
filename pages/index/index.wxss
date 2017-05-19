@@ -16,6 +16,7 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+.phone{
+  border: gray solid 1rpx;
+  padding: 2rpx;
 }

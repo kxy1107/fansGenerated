@@ -24,7 +24,9 @@ App({
                 iv:res.iv,
               };
               util.HttpGet(getUserUrl, userData, function (resUserData) {
-                console.log("resUserData:" + resUserData)
+                console.log("resUserData:" + resUserData);
+                that.globalData.userInfo = resUserData;
+                return typeof cb == "function" && cb(resUserData)
               })
              }
            })
