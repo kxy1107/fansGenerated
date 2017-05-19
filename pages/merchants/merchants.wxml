@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view>
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.UserImg}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.UserName}}</text>
+  </view>
+  <button type="primary">添加内容</button>
+  <view class="share-info">
+    <scroll-view>
+      <view wx:for="{{shareList}}" data-id = "{{item.ShowContentID}}" catchtap="clickItem">
+        <text>{{item.ShowContentHead}}</text>
+        <text>{{item.ImprotentContent}}</text>
+        <text>{{item.ShowContentEnd}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>
