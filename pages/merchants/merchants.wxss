@@ -15,3 +15,10 @@
 .userinfo-nickname {
   color: #aaa;
 }
+.my-content-list-text{
+  font-size: 38rpx;
+  color: #000;
+  font-weight: bold;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}

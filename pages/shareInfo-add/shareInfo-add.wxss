@@ -1,0 +1,13 @@
+/* pages/shareInfo-add/shareInfo-add.wxss */
+input{
+  background-color: #fff;
+  width: 100%;
+}
+
+textarea{
+  background-color: #fff;
+  width: 100%;
+  height: 200rpx;
+  min-height: 200rpx;
+  max-height: 200rpx;
+}

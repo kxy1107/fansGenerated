@@ -4,14 +4,25 @@
     <image class="userinfo-avatar" src="{{userInfo.UserImg}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.UserName}}</text>
   </view>
-  <button type="primary">添加内容</button>
-  <view class="share-info">
+  <view class="my-content-list-text">我的内容列表</view>
+  <button type="primary" catchtap="clickAdd">添加新内容</button>
+  <view class="line ui-mt20"></view>
+  <block wx:if="{{emptyBody}}" >
+    <view class="empty-body">暂时没用内容，去添加内容</view>
+  </block>
+  <block wx:else>
+   <view class="share-info">
     <scroll-view>
-      <view wx:for="{{shareList}}" data-id = "{{item.ShowContentID}}" catchtap="clickItem">
-        <text>{{item.ShowContentHead}}</text>
-        <text>{{item.ImprotentContent}}</text>
-        <text>{{item.ShowContentEnd}}</text>
-      </view>
+      <block wx:for="{{shareList}}">
+        <view data-id="{{item.ShowContentID}}" catchtap="clickItem" class="ui-p20">
+          <text class="share-content-head">{{item.ShowContentHead}}</text>
+          <text class="share-content-important">{{item.ImprotentContent}}</text>
+          <text class="share-content-end">{{item.ShowContentEnd}}</text>
+        </view>
+        <view class="line"></view>
+      </block>
     </scroll-view>
   </view>
+  </block>
+
 </view>

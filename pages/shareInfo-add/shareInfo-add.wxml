@@ -1,0 +1,19 @@
+<!--pages/shareInfo-add/shareInfo-add.wxml-->
+<view class="">
+  <view class="ui-p20">
+    <text>前面信息：</text>
+    <textarea auto-height placeholder="请输入内容" bindinput = "inputHead" value = "{{showContentHead}}"/>
+  </view>
+  <view class="ui-p20">
+    <text>重要红色字体信息：</text>
+    <input class="weui-input" placeholder="请输入内容"  bindinput = "inputImportant" value = "{{showContentImportant}}"/>
+  </view>
+  <view class=" ui-p20">
+    <text>后面信息：</text>
+    <textarea auto-height placeholder="请输入内容" bindinput = "inputEnd" value = "{{showContentEnd}}"/>
+  </view>
+  <button type="primary" class="ui-m20" catchtap="clickConfirm">确认</button>
+  <block wx:if = "{{editShowInfo}}">
+    <button type="primary" class="ui-m20" catchtap="clickLookResult">查看结果</button>
+  </block>
+</view>

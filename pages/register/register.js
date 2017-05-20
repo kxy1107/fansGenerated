@@ -24,9 +24,9 @@ Page({
     let data = {
       UserNo: UserNo,
       Phone: Phone
-      };
-    util.HttpGet(url, data,function(res){
-      if(res.Code == 1){
+    };
+    util.HttpGet(url, data, function (res) {
+      if (res.Code == 1) {
         wx.showToast({
           title: '注册成功',
         });
@@ -42,12 +42,19 @@ Page({
   onLoad: function () {
 
     var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
-      //更新数据
-      that.setData({
-        userInfo: userInfo
+    if (app.globalData.userInfo == null || app.globalData.userInfo == "") {
+      app.getUserInfo(function (userInfo) {
+        //更新数据
+        that.setData({
+          userInfo: userInfo
+        })
       })
-    })
+    } else {
+      that.setData({
+        userInfo: app.globalData.userInfo
+      })
+    }
+
+
   }
 })

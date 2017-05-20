@@ -1,9 +1,11 @@
 {
   "pages":[
-    
+ 
     "pages/index/index",
     "pages/register/register",
+    "pages/shareInfo-add/shareInfo-add",
     "pages/merchants/merchants",
+
     "pages/shareInfo/shareInfo"
   ],
   "window":{

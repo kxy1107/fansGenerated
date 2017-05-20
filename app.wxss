@@ -1,5 +1,8 @@
 /**app.wxss**/
 @import '/weui.wxss';
+page{
+  background-color: #F6F6F6;
+}
 
 .container {
   height: 100%;
@@ -95,4 +98,20 @@ flex:1;
 .canvas {
     width: 100%;
     height: 600rpx;
+}
+
+.share-content-head{
+  font-size: 32rpx;
+}
+.share-content-important{
+  font-size: 48rpx;
+  color: red;
+}
+.share-content-end{
+  font-size: 32rpx;
+}
+.empty-body{
+  color: gray;
+  font-size: 32rpx;
+  text-align: center;
 }
