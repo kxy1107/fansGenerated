@@ -85,7 +85,23 @@ Page({
 
 //点击查看结果
   clickLookResult:function(){
+    let that = this;
+    let url = app.globalData.address + '/addShareInfo';
+    let data = {
+      UserNo: app.globalData.userInfo.UserNo,
+      ContentID: that.data.showID,
+      ContentHead: that.data.showContentHead,
+      ImprotantContent: that.data.showContentImportant,
+      ContentEnd: that.data.showContentEnd,
+    };
+    util.HttpGet(url, data, function (res) {
+      if (res.Code == 1) {
+        wx.redirectTo({
+          url: '../shareInfo/shareInfo?contentID=' + that.data.showID + '&shareUserNo=' + app.globalData.userInfo.UserNo + '&shareUserName=' + app.globalData.userInfo.UserName,
+        })
 
+      }
+    });
   },
 
 

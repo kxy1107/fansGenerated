@@ -12,6 +12,7 @@ function HttpGet(url, parm, response) {
       return typeof response == "function" && response(res.data)
     },
     fail: function (res) {
+      console.log("fail:" + res.errMsg);
       return typeof response == "function" && response(false)
     }
   })

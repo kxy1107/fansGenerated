@@ -18,11 +18,15 @@ App({
            wx.getUserInfo({
              withCredentials:true,
              success:function(res){
+              
                let getUserUrl = that.globalData.address + '/getUserInfo';
               let userData = {
                 encryptedData: res.encryptedData,
                 iv:res.iv,
               };
+             
+              console.log("getUserUrl:" + getUserUrl);
+            
               util.HttpGet(getUserUrl, userData, function (resUserData) {
                 console.log("resUserData:" + resUserData);
                 that.globalData.userInfo = resUserData;
@@ -38,7 +42,7 @@ App({
     
   },
   globalData:{
-    address:"http://127.0.0.1:8017",
+    address:"http://192.168.1.100:8027",
     userInfo:null
   }
 })

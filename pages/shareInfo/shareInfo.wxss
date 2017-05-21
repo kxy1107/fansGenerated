@@ -1,1 +1,19 @@
 /* pages/shareInfo/shareInfo.wxss */
+@import '../shareInfo-add/shareInfo-add.wxss';
+.user-name{
+  font-size: 38rpx;
+  color: #000;
+  font-weight: bold;
+}
+.friend-list{
+
+}
+.userinfo-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+.friend-money{
+  color: red;
+}

@@ -1,2 +1,36 @@
 <!--pages/shareInfo/shareInfo.wxml-->
-<text>pages/shareInfo/shareInfo.wxml</text>
+<view class="show-content ui-p20">
+  <text class="share-content-head">{{contentHead}}</text>
+  <text class="share-content-important">{{contentImportant}}</text>
+  <text class="share-content-end">{{contentEnd}}</text>
+
+</view>
+
+<view class="ui-p20">
+  <text class="user-name">{{shareUserName}}</text>
+  <text>你的好友共为你抢到</text>
+  <text>{{totalMoney}}</text>
+</view>
+
+<view class="ui-p20">
+  好友帮抢记录
+</view>
+<view class="line"></view>
+<block wx:if = "{{emptyBody}}">
+  <view class="empty-body ui-p20">暂无记录</view>
+</block>
+<block wx:else>
+  <scroll-view>
+    <block wx:for="{{friendClickList}}">
+      <view class="ui-flex ui-flex-ver-center friend-list">
+        <image class="userinfo-avatar" src="{{item.UserImg}}"></image>
+        <text>{{item.UserName}}</text>
+        <text>帮你抢到</text>
+        <text class="friend-money">{{item.Money}}</text>
+      </view>
+      <view class="line"></view>
+    </block>
+  </scroll-view>
+</block>
+
+<button type="primary" catchtap="clickCreat">我也要领</button>
